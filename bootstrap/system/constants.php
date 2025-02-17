@@ -18,3 +18,5 @@ define("SCHEME", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https
 const FULL_URL = SCHEME . '://' . HTTP_HOST . PHP_SELF;
 # Реферер
 define("REFERER", _filter($_SERVER['HTTP_REFERER'] ?? 'none'));
+# Откуда пришли
+define("HTTP_REFERER", isset($_SERVER['HTTP_REFERER']) ? _filter($_SERVER['HTTP_REFERER']) : 'none');
