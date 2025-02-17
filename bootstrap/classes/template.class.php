@@ -18,6 +18,18 @@ class template
         HTML;
     }
 
+    # Отримання або відображення мітки.
+    public static function label($text, $for_id = null, $label_class_text = 'system_label_class_text'): void
+    {
+        # Якщо передано ID, додаємо атрибут for
+        if ($for_id) {
+            echo '<label for="' . clearspecialchars($for_id) . '" class="' . clearspecialchars($label_class_text) . '">' . clearspecialchars($text) . '</label>';
+        } else {
+            # Якщо ID не передано, виводимо мітку без for
+            echo '<label class="' . clearspecialchars($label_class_text) . '">' . clearspecialchars($text) . '</label>';
+        }
+    }
+
     # Генерує капчу
     public static function captcha($text = 'Числа з картинки', $captcha_class_input = 'system_captcha_class_input', $captcha_class_block = 'system_captcha_class_block'): void {
         global $captcha_length, $captcha_random_seed, $captcha_key;

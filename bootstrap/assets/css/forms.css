@@ -1,0 +1,12 @@
+/* Системний стиль для лейблів */
+.system_label_class_text {
+    font-family: Arial, sans-serif;     /* Шрифт */
+    font-size: 14px;                    /* Розмір шрифта */
+    color: #333;                        /* Колір тексту */
+    line-height: 1.5;                   /* Висота рядка */
+}
+
+/* Додаткові стилі для лейблів з класом system_label_class_text при ховері */
+.system_label_class_text:hover {
+    cursor: pointer;                    /* Вказівник змінюється на руку */
+}
