@@ -24,3 +24,5 @@ define("HTTP_REFERER", isset($_SERVER['HTTP_REFERER']) ? _filter($_SERVER['HTTP_
 define("BROWSER", isset($_SERVER['HTTP_USER_AGENT']) ? _filter($_SERVER['HTTP_USER_AGENT']) : 'none');
 # IP пользователя
 define("IP", _filter(filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP)));
+# Полный URL адрес запрашиваемой страницы
+define("REQUEST_URI", isset($_SERVER['REQUEST_URI']) ? _filter($_SERVER['REQUEST_URI']) : '/');
