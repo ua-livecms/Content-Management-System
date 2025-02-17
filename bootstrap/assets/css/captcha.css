@@ -1,0 +1,28 @@
+.system_captcha_class_input {
+    border: 2px #9EE6CB solid;
+    height: 35px;
+    outline: none;
+    line-height: 33px;
+    display: inline-block;
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+
+.system_captcha_class_block {
+    border: 2px #9EE6CB solid;
+    background-color: #9EE6CB;
+    height: 37px;
+    line-height: 38px;
+    display: inline-block;
+    border-radius: 0 10px 10px 0;
+    width: 80px;
+    text-align: center;
+    position: relative;
+    left: -5px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
