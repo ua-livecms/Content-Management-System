@@ -10,3 +10,5 @@ define("TM", time());
 define("PHP_SELF", _filter($_SERVER['PHP_SELF']));
 # Домен сайту
 define("HTTP_HOST", _filter($_SERVER['HTTP_HOST']));
+# Ім'я сервера
+define("SERVER_NAME", _filter($_SERVER['SERVER_NAME']));
