@@ -20,3 +20,5 @@ const FULL_URL = SCHEME . '://' . HTTP_HOST . PHP_SELF;
 define("REFERER", _filter($_SERVER['HTTP_REFERER'] ?? 'none'));
 # Откуда пришли
 define("HTTP_REFERER", isset($_SERVER['HTTP_REFERER']) ? _filter($_SERVER['HTTP_REFERER']) : 'none');
+# Браузер пользователя
+define("BROWSER", isset($_SERVER['HTTP_USER_AGENT']) ? _filter($_SERVER['HTTP_USER_AGENT']) : 'none');
