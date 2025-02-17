@@ -87,7 +87,12 @@ class template
     static function button() {}
 
     # Виводить підвал сторінки, підключаючи відповідний файл
-    public static function footer() {}
+    public static function footer() {
+        echo <<<HTML
+            </body>
+        </html>
+        HTML;
+    }
 }
 
 
