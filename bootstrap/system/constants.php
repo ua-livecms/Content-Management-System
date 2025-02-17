@@ -14,3 +14,5 @@ define("HTTP_HOST", _filter($_SERVER['HTTP_HOST']));
 define("SERVER_NAME", _filter($_SERVER['SERVER_NAME']));
 # Схема (http/https)
 define("SCHEME", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http');
+# Повний URL, включаючи схему, домен та шлях
+const FULL_URL = SCHEME . '://' . HTTP_HOST . PHP_SELF;
