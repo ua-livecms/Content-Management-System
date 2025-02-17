@@ -16,3 +16,5 @@ define("SERVER_NAME", _filter($_SERVER['SERVER_NAME']));
 define("SCHEME", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http');
 # Повний URL, включаючи схему, домен та шлях
 const FULL_URL = SCHEME . '://' . HTTP_HOST . PHP_SELF;
+# Реферер
+define("REFERER", _filter($_SERVER['HTTP_REFERER'] ?? 'none'));
