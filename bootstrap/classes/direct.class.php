@@ -13,7 +13,7 @@ class direct {
      * @return string Очищене значення параметра або 'no_data', якщо значення відсутнє
      */
 
-    public static function get($get_name): string
+    public static function get(string $get_name): string
     {
         $filter = filter_input(INPUT_GET, $get_name, FILTER_SANITIZE_ENCODED) ?? '';
         $get = clearSpecialChars($filter);
@@ -27,7 +27,7 @@ class direct {
      * @return bool true, якщо файл існує, інакше false
      */
 
-    public static function e_file($path): bool
+    public static function e_file(string $path): bool
     {
         return is_file(ROOT_DIR . '/' . $path);
     }
@@ -39,7 +39,7 @@ class direct {
      * @return bool true, якщо директорія існує, інакше false
      */
 
-    public static function e_dir($path): bool
+    public static function e_dir(string $path): bool
     {
         return is_dir(ROOT_DIR . '/' . $path);
     }
@@ -53,7 +53,7 @@ class direct {
      * @param string $ext Розширення файлів компонентів (за замовчуванням 'php')
      */
 
-    public static function components($path, $count = 1, $limit = 100, $ext = 'php') {
+    public static function components(string $path, int $count = 1, int $limit = 100, string $ext = 'php') {
         // Todo
     }
 }

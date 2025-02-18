@@ -36,7 +36,7 @@ function filter_cookie(?string $data): string
  * @return string Очищений текст без спеціальних символів.
  */
 
-function clearspecialchars(string $text): string
+function clearSpecialChars(string $text): string
 {
     # Список спеціальних символів, які необхідно видалити
     $special_chars = array('?', '[', ']', '/', '\\', '=', '<', '>', ':', ';', ',', "'", '"', '&', '$', '#', '*', '(', ')', '|', '~', '`', '!', '{', '}', '%', '+', chr(0));

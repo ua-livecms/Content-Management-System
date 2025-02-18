@@ -7,8 +7,8 @@
  * @return int Довжина рядка без символів нового рядка
  */
 
-function getStringLength(string $text): int
+function getStringLength(?string $text): int
 {
-    # Видаляємо всі символи переносу рядка ("\r" і "\n")
-    return mb_strlen(str_replace(["\r", "\n"], '', $text), 'UTF-8');
+    // Якщо $text дорівнює null, повертаємо 0, Видаляємо всі символи переносу рядка
+    return $text === null ? 0 : mb_strlen(str_replace(["\r", "\n"], '', $text), 'UTF-8');
 }

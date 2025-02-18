@@ -1,13 +1,9 @@
 <?php
-
 # Визначаємо кореневий каталог сайту
 define('ROOT_DIR', dirname(__FILE__));
 
-# Підключаємо основний файл ядра
+# Підключаємо основний файл системного ядра
 require_once(ROOT_DIR . '/bootstrap/core.php');
 
-# Підключаємо файл ініціалізації
-require_once(ROOT_DIR . '/bootstrap/init.php');
-
-# Тестовий модуль для тестування
-require_once(ROOT_DIR . '/plugins/sandbox/index.php');
+# Запускаємо ініціалізацію маршрутизатора
+router::init();
