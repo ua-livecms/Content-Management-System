@@ -3,26 +3,26 @@
 class form
 {
     /**
-     * Генерація HTML форми <form>.
+     * Створює HTML форму з необхідними атрибутами.
      *
-     * Ця функція дозволяє створити форму з можливістю налаштування різних параметрів, таких як метод, дія, класи, а також додаванням полів для вводу.
-     * За допомогою цієї функції можна швидко створювати форми для збору даних користувача.
-     *
-     * @param string $action Дія форми, тобто URL, куди будуть відправлені дані.
-     * @param string $method Метод передачі даних форми. Може бути 'GET' або 'POST'. За замовчуванням 'POST'.
-     * @param string|null $form_class Клас для стилізації форми. За замовчуванням null (За замовчуванням 'system_form'.).
-     * @param bool $enctype Визначає тип кодування, який використовується для форми. Це необхідно для відправки файлів. За замовчуванням false.
-     * @param string $target Визначає, де відображатиметься відповідь на форму. Наприклад, '_self', '_blank'. За замовчуванням '_self'.
-     *
-     * @return void
+     * @param string $action Адреса, куди буде відправлено дані форми.
+     * @param string $method Метод HTTP для форми (за замовчуванням 'POST').
+     * @param string|null $class CSS клас для форми (за замовчуванням 'system_form').
+     * @param bool $enctype Чи потрібно додавати атрибут enctype (для відправки файлів).
+     * @param string|null $target Атрибут target для відкриття результатів у новому вікні чи фреймі.
      */
 
-    public static function create(string $action, string $method = 'POST', ?string $form_class = 'system_form', bool $enctype = false, string $target = '_self'): void
+    public static function create(string $action, string $method = 'POST', ?string $class = 'system_form', bool $enctype = false, string $target = null): void
     {
-        # Додавання атрибута enctype, якщо він потрібен для відправки файлів
+        # Формуємо атрибут enctype лише якщо необхідно
         $enctype_attribute = $enctype ? 'enctype="multipart/form-data"' : '';
+        # Формуємо значення атрибутів для форми
+        $action = $action ? clearSpecialChars($action) : '';
+        $method = $method ? clearSpecialChars($method) : 'POST';
+        $class = $class ? clearSpecialChars($class) : 'system_form';
+        $target = $target ? clearSpecialChars($target) : '';
         # Виведення HTML коду форми
-        echo '<form action="' . clearSpecialChars($action) . '" method="' . clearSpecialChars($method) . '" class="' . clearSpecialChars($form_class) . '" ' . $enctype_attribute . ' target="' . clearSpecialChars($target) . '">';
+        echo "<form action=\"$action\" method=\"$method\" class=\"$class\" $enctype_attribute target=\"$target\">";
     }
 
     /**
