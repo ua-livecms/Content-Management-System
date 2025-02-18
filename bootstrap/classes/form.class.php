@@ -17,4 +17,15 @@ class form
      * @return void
      */
 
+    /**
+     * Закриття HTML форми.
+     *
+     * Ця функція закриває тег <form>.
+     *
+     * @return void
+     */
+
+    public static function close(): void {
+        echo '</form>';
+    }
 }
