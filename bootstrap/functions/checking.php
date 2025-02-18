@@ -98,7 +98,7 @@ function translit(string $value): string
  * @return bool Повертає true, якщо колір є у списку дозволених, і false, якщо його немає.
  */
 
-function color_filter($color)
+function color_filter(string $color): bool
 {
 
     /**
