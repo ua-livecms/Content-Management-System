@@ -12,6 +12,7 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Content Management System</title>
             <link rel="stylesheet" href="/bootstrap/assets/libs/font-awesome/font-awesome.css">
+            <link rel="stylesheet" href="/bootstrap/assets/css/html.css">
             <link rel="stylesheet" href="/bootstrap/assets/css/captcha.css">
             <link rel="stylesheet" href="/bootstrap/assets/css/forms.css">
         </head>
