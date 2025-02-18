@@ -43,10 +43,38 @@ class form
             echo '<label class="' . clearspecialchars($labelClassText) . '">' . clearspecialchars($text) . '</label>';
         }
     }
+
     /**
-     * Закриття HTML форми.
+     * Створює кнопку (button) з можливістю додавання іконки, тексту та додаткових параметрів.
      *
-     * Ця функція закриває тег <form>.
+     * @param string|null $cssClass Клас CSS для кнопки (необов'язково).
+     * @param string|null $buttonName Ім'я кнопки, яке буде використовуватись для відправки форми.
+     * @param string|null $iconClass Іконка для кнопки, яка буде відображена перед текстом (необов'язково).
+     * @param string|null $buttonText Текст кнопки, який буде перекладений через функцію translation().
+     * @param string|null $extraAttributes Додатковий атрибут для кнопки (необов'язково).
+     * @param int $iconSize Розмір іконки в пікселях (за замовчуванням 15px).
+     */
+
+    static function button(string $cssClass = null, string $buttonName = null, string $iconClass = null, string $buttonText = null, string $extraAttributes = null, int $iconSize = 15): void {
+        # Перевірка наявності іконки, якщо вона задана, створюється HTML для іконки
+        $iconHtml = $iconClass === null ? null : "<i class='fa fa-" . $iconClass . " fa-fw' style='font-size: " . $iconSize . "px'></i>";
+        ?>
+        <!-- Створює кнопку з вказаними атрибутами та додатковим текстом -->
+        <button o="<?=$extraAttributes?>" type="submit" class="<?=$cssClass?>" name="<?=$buttonName?>" id="<?=$buttonName?>" value="go"><?=$iconHtml?> <?=translation($buttonText)?></button>
+        <!-- Додає прихований input для передачі значення "go" разом з іншими параметрами -->
+        <input type="hidden" value="go" name="<?=$buttonName?>">
+        <?
+        # Якщо захист CSRF увімкнено, додається прихований input з токеном
+        /*
+        if (config('CSRF') == 1){
+            ?>
+            <!-- Прихований input для токену CSRF, забезпечує захист від атак -->
+            <input type="hidden" name="<?=csrf::token_id()?>" value="<?=csrf::token(csrf::token_id())?>">
+            <?
+        }
+        */
+    }
+
      *
      * @return void
      */
