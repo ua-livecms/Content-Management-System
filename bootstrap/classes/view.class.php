@@ -73,6 +73,7 @@ class view
         </head>
 
         <body>
+
         <?php
     }
 
@@ -87,6 +88,7 @@ class view
 
     public static function footer() {
         ?>
+        <script src="#"></script>
         </body>
         </html>
         <?php
