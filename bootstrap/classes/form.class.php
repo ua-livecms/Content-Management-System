@@ -26,17 +26,11 @@ class form
     }
 
     /**
-     * Отримання або відображення HTML мітки <label>.
+     * Створює HTML мітку (label), яка може бути прив'язана до елемента форми.
      *
-     * Ця функція виводить HTML елемент <label>, який зазвичай використовується для прив'язки тексту до елемента форми.
-     * Якщо передано ID, то атрибут `for` буде додано до мітки, що дозволить зв'язати її з певним елементом на сторінці.
-     * Якщо ID не вказано, мітка виводиться без атрибута `for`.
-     *
-     * @param string $text Текст мітки, який буде виведений всередині елемента <label>.
-     * @param string|null $forID ID елемента, з яким буде пов'язана мітка. Якщо не вказано, атрибут `for` не додається.
-     * @param string $labelClassText Клас для стилізації мітки. За замовчуванням 'system_label-text'.
-     *
-     * @return void
+     * @param string $text Текст мітки.
+     * @param string|null $forID ID елемента, до якого прив'язується мітка (необов'язково).
+     * @param string $labelClassText CSS клас для тексту мітки (за замовчуванням 'system_label-text').
      */
 
     public static function label(string $text, string $forID = null, string $labelClassText = 'system_label-text'): void
